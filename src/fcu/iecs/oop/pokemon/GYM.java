@@ -2,32 +2,35 @@ package fcu.iecs.oop.pokemon;
 
 public class GYM {
 	public static Player fight(Player...players){
+	PokemonType fire=PokemonType.FIRE;
+	PokemonType water=PokemonType.WATER;
+	PokemonType grass=PokemonType.GRASS;
 	int p1=0;
 	int p2=0;
 	int i=0;
 	int j = (int) (Math.random() * 2 + 1);
 	for(i=0;i<3;i++){	
-		if(players[0].getPokemons()[i].getType().equals("FIRE")&&players[1].getPokemons()[i].getType().equals("GRASS")){
+		if((players[0].getPokemons()[i].getType().equals(fire)==true)&&(players[1].getPokemons()[i].getType().equals(grass)==true)){
 			p1++;
 			continue;
 		}
-		else if(players[0].getPokemons()[i].getType().equals("GRASS")&&players[1].getPokemons()[i].getType().equals("FIRE")){
+		else if((players[0].getPokemons()[i].getType().equals(grass)==true)&&(players[1].getPokemons()[i].getType().equals(fire)==true)){
 			p2++;
 			continue;
 		}
-		else if(players[0].getPokemons()[i].getType().equals("GRASS")&&players[1].getPokemons()[i].getType().equals("WATER")){
+		else if((players[0].getPokemons()[i].getType().equals(grass)==true)&&(players[1].getPokemons()[i].getType().equals(water)==true)){
 			p1++;
 			continue;
 		}
-		else if(players[0].getPokemons()[i].getType().equals("WATER")&&players[1].getPokemons()[i].getType().equals("GRASS")){
+		else if((players[0].getPokemons()[i].getType().equals(water)==true)&&(players[1].getPokemons()[i].getType().equals(grass)==true)){
 			p2++;
 			continue;
 		}
-		else if(players[0].getPokemons()[i].getType().equals("WATER")&&players[1].getPokemons()[i].getType().equals("FIRE")){
+		else if((players[0].getPokemons()[i].getType().equals(water)==true)&&(players[1].getPokemons()[i].getType().equals(fire)==true)){
 			p1++;
 			continue;
 		}
-		else if(players[0].getPokemons()[i].getType().equals("FIRE")&&players[1].getPokemons()[i].getType().equals("WATER")){
+		else if((players[0].getPokemons()[i].getType().equals(fire)==true)&&(players[1].getPokemons()[i].getType().equals(water)==true)){
 			p2++;
 			continue;
 		}
@@ -36,7 +39,7 @@ public class GYM {
 				p1++;
 				continue;
 			}
-			else if(players[0].getPokemons()[i].getCp()>players[1].getPokemons()[i].getCp()){
+			else if(players[1].getPokemons()[i].getCp()>players[0].getPokemons()[i].getCp()){
 				p2++;
 				continue;
 			}
